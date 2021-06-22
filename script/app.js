@@ -37,6 +37,9 @@ const calculator = {
             input.value = nine.value
             //calculator.displayValue = input.value
         }
+        else if (input.value === "0"){
+            input.value = nine.value 
+        }
         else {
             input.value = input.value + nine.value
            // calculator.displayValue = input.value
@@ -48,6 +51,9 @@ const calculator = {
         {
             input.value = eight.value
             calculator.displayValue = input.value
+        }
+        else if (input.value === "0"){
+            input.value = eight.value 
         }
         else {
             input.value = input.value + eight.value
@@ -61,6 +67,10 @@ const calculator = {
             input.value = seven.value
             calculator.displayValue = input.value
         }
+        else if (input.value === "0"){
+            input.value = seven.value 
+        }
+
         else {
             input.value = input.value + seven.value
             calculator.displayValue = input.value
@@ -72,6 +82,9 @@ const calculator = {
         {
             input.value = six.value
             calculator.displayValue = input.value
+        }
+        else if (input.value === "0"){
+            input.value = six.value 
         }
         else {
             input.value = input.value + six.value
@@ -85,6 +98,9 @@ const calculator = {
             input.value = five.value
             calculator.displayValue = input.value
         }
+        else if (input.value === "0"){
+            input.value = five.value 
+        }
         else {
             input.value = input.value + five.value
             calculator.displayValue = input.value
@@ -96,6 +112,9 @@ const calculator = {
         {
             input.value = four.value
             calculator.displayValue = input.value
+        }
+        else if (input.value === "0"){
+            input.value = four.value 
         }
         else {
             input.value = input.value + four.value
@@ -109,6 +128,9 @@ const calculator = {
             input.value = three.value
             calculator.displayValue = input.value
         }
+        else if (input.value === "0"){
+            input.value = three.value 
+        }
         else {
             input.value = input.value + three.value
             calculator.displayValue = input.value
@@ -120,6 +142,9 @@ const calculator = {
         {
             input.value = two.value
             calculator.displayValue = input.value
+        }
+        else if (input.value === "0"){
+            input.value = two.value 
         }
         else {
             input.value = input.value + two.value
@@ -133,6 +158,9 @@ const calculator = {
             input.value = one.value
             calculator.displayValue = input.value
         }
+        else if (input.value === "0"){
+            input.value = one.value 
+        }
         else {
             input.value = input.value + one.value
             calculator.displayValue = input.value
@@ -144,8 +172,12 @@ const calculator = {
         {
             input.value = Number(zero.value)
             calculator.displayValue = Number(input.value)
-            
         }
+        else if(input.value === "0"){
+            input.value === Number(0)
+            return;
+        }
+
         else {
             input.value = input.value + zero.value
             calculator.displayValue = input.value
@@ -240,14 +272,18 @@ minus.onclick = ()=> {
     else if (m==1) {
         if(input.value == null )
      {
-         calculator.firstNumber = Number(calculator.firstNumber)
+         calculator.firstNumber = Number(input.placeholder)
          input.placeholder = calculator.firstNumber
-     }  else if (calculator.firstNumber == 0){
+        console.log ("one"+calculator.firstNumber)
+     }  
+
+     else if (calculator.firstNumber == "0"){
         calculator.firstNumber = Number(input.value)
         input.value = null
         input.placeholder = calculator.firstNumber
-        
+        console.log ("two"+calculator.firstNumber)
     }   else {
+        console.log ("three"+calculator.firstNumber)
             calculator.firstNumber = Number(calculator.firstNumber) * Number(input.value)
             input.value = null
             input.placeholder = calculator.firstNumber
